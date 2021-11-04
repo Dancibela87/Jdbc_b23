@@ -3,6 +3,9 @@ package com.cydeo.day01;
 import com.cydeo.utlity.ConfigReader;
 import com.cydeo.utlity.DB_Util;
 
+import java.util.List;
+import java.util.Map;
+
 public class PracticeUtility {
     public static void main(String[] args) {
 
@@ -62,6 +65,11 @@ public class PracticeUtility {
         // print out all row as List of Map
         System.out.println("DB_Util.getAllRowAsListOfMap() = "
                 + DB_Util.getAllRowAsListOfMap());
+
+        //print out above list of map element by element
+        List<Map<String, String>> allRowAmps = DB_Util.getAllRowAsListOfMap();
+
+        allRowAmps.forEach(each -> System.out.println(each));
 
         //close the connection
         DB_Util.destroy();
